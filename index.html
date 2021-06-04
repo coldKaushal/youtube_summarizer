@@ -1,11 +1,10 @@
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <title>Awesome Search Box</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube Transcript summarizer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -20,18 +19,19 @@
       width: 100%;
       margin: 0;
       padding: 0;
-      background: #e74c3c !important;
+      background: #0c1627 !important;
       }
   
       .searchbar{
       margin-bottom: auto;
       margin-top: auto;
       height: 60px;
-      background-color: #353b48;
+      background-color: #162541;
       border-radius: 30px;
       padding: 10px;
       }
-  
+      
+      @media only screen and (min-width: 1000px){
       .search_input{
       color: white;
       border: 0;
@@ -42,51 +42,73 @@
       transition: width 0.4s linear;
       line-height: 40px;
       }
-  
+      }
+      @media only screen and (max-width: 1000px){
+        .search_input{
+      color: white;
+      border: 0;
+      outline: 0;
+      background: none;
+      padding: 0 10px;
+      width: auto;
+      transition: width 0.4s linear;
+      line-height: 40px;
+      }
+      }
       .searchbar:hover > .search_icon{
       background: white;
       color: #e74c3c;
       }
   
-      .search_icon{
-      height: 40px;
-      width: 40px;
-      float: right;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      color:white;
-      text-decoration:none;
-      }
+      
       .search_button{
-        background-color: #353b48;
+        width: auto;
+        background-color: #0087cf;
         color: white;
         font-weight: bold;
+        margin-right: 0.5rem;
       }
       .search_button:hover{
         background-color: white;
-        color: red;
+        color: #0087cf;
         font-weight: bold;
       }
             </style>
 </head>
 
 <body>
-    
     <div class="container h-100">
-        <div class="d-flex justify-content-center h-100">
+        <div style="text-align: center;margin-top: 2rem;">
+            <img src="https://i.ibb.co/TrCz40N/Nice-Png-youtube-logo-png-157574.png" />
+        </div>
+        <div class="d-flex justify-content-center " style="height: 20%;margin-top: 2rem;">
+            
           <div class="searchbar">
                     <form class="search_bar" action="{{ url_for('fetchLink')}}" method="POST">
-      <input type="text" name="url" class="search_input" placeholder="https://www.youtube.com/watch?v=NFHDHcs4BvQ">
-      <button  class="btn rounded-circle search_button" >
+      <input type="text" name="url" class="search_input" placeholder="https://www.youtube.com/watch?v=">
+      
+<input type="range" class="form-range" name="percent" id="customRange1" min="0" max ="100" value="" 
+oninput="document.getElementById('customRange1').value=this.value;
+document.getElementById('slidervalue').innerHTML=this.value;
+">
+      <button  class="btn search_button" >
           submit
       </button>
+      
     </form>
-    </div>
-        </div>
 
     </div>
-    <p1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p1>
+        </div>
+        <p id="labelforslider" style="color:white;font-size:1.2rem;
+        text-align: center;">% Summarization : <span id="slidervalue">50</span></p>
+        <div class="card text-white  mb-3" style="max-width: 50rem; background-color: #162541; margin: auto;">
+            <div class="card-header" style="text-align: center;">Summary</div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Secondary card title</h5> -->
+              <p class="card-text">{{summary}}</p>
+            </div>
+          </div>
+    </div>
+    
 </body>
 </html>
