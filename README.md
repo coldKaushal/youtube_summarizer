@@ -7,14 +7,14 @@ note: it is better to paste the code in different pieces
 scope of improvement:
 
 
-better summarizer tool
-auto generate transcript from audio
-better heading
-better ui
-loader while the screen is loading
-auto scroll to summary when obtained
-more details fetched from video id
+better summarizer tool, 
+auto generate transcript from audio,
+better heading,
+better ui,
+loader while the screen is loading,
+auto scroll to summary when obtained,
+more details fetched from video id,
 
-
+demo video
 
 https://github.com/coldKaushal/youtube_summarizer/blob/main/Yt%20sumarizer%20demo.mp4
