@@ -17,4 +17,4 @@ more details fetched from video id,
 
 demo video
 
-https://github.com/coldKaushal/youtube_summarizer/blob/main/Yt%20sumarizer%20demo.mp4
+https://youtu.be/dmKEJjhuNXE
